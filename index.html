@@ -2162,8 +2162,8 @@
         vizCount = 0,
         devType,
         vHideTabs = true,
-        vWidth = 414,
-        vHeight = 2000,
+        vHeight = 800;
+			vWidth = 1600;
             vHideToolbar = true;
     var options = {
         device: devType,
@@ -2175,7 +2175,7 @@
         if (window.matchMedia("(max-width: 480px)").matches) {
             //alert("I am a phone layout!");
             devType = 'phone';
-            vWidth = 414;
+            vWidth = 415;
             vHeight = 2000;
             //options.device = 'phone';
         } else if (window.matchMedia("(max-width: 980px)").matches) {
@@ -2194,6 +2194,11 @@
         console.log("launch0")
         launchViz(0);
         console.log("launch1")
+        if (devType === 'desktop')  {
+			vHeight = 900;}
+			else if (devType === 'phone')
+			{vHeight = 1500;}
+			else {vHeight = 1600;}    
         launchViz(1);
         console.log("launch2")
         launchViz(2);
